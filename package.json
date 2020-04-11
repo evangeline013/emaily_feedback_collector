@@ -1,0 +1,26 @@
+{
+  "name": "emaily_feedback_collector",
+  "version": "1.0.0",
+  "description": "An application that helps clients to collect feedback from target users, with responses automatically tabulated",
+  "main": "index.js",
+  "engines": {
+    "node": "13.12.0",
+    "npm": "6.14.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evangeline013/emaily_feedback_collector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evangeline013/emaily_feedback_collector/issues"
+  },
+  "homepage": "https://github.com/evangeline013/emaily_feedback_collector#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
