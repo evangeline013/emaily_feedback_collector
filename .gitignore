@@ -1,3 +1,4 @@
 dev.js
 node_modules
 .env.development
+.DS_Store
