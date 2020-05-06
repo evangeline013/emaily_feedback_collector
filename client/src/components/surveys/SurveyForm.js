@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import SurveyFiled from './SurveyField';
 import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
-    { label: 'Survey Title', name: 'title' },
-    { label: 'Subject Line', name: 'subject' },
-    { label: 'Email Body', name: 'body' },
-    { label: 'Recipient List', name: 'emails' },
+    { label: 'Survey Title', name: 'title', noValueError: 'Please provide a Survey Title' },
+    { label: 'Subject Line', name: 'subject', noValueError: 'Please provide a Subject Line' },
+    { label: 'Email Body', name: 'body', noValueError: 'Please provide Email Body' },
+    { label: 'Recipient List', name: 'emails', noValueError: 'Please provide Recipient List' },
 ];
 
 class SurveyForm extends Component {
@@ -37,6 +38,21 @@ class SurveyForm extends Component {
     }
 }
 
+const validate = values => {
+    const errors = {};
+
+    errors.emails = validateEmails(values.emails || '');
+
+    FIELDS.forEach(({ name, noValueError }) => {
+        if (!values[name]) {
+            errors[name] = noValueError;
+        }
+    })
+
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'surveyForm',
 })(SurveyForm);
