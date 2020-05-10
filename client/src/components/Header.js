@@ -16,6 +16,7 @@ class Header extends Component {
                     <li key="3" style={{ margin: '0 10px' }}>
                         Credits: {this.props.auth.credits}
                     </li>,
+                    <li key="4"><Link to='/surveys'>Surveys</Link></li>,
                     <li key="2"><a href="/api/logout">Logout</a></li>
                 ];
         }
@@ -27,6 +28,7 @@ class Header extends Component {
                     <Link
                         to={this.props.auth ? '/surveys' : '/'}
                         className="left brand-logo"
+                        style={{ marginLeft: '20px'}}
                     >
                         Emaily
                     </Link>
